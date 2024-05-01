@@ -3,11 +3,15 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./styles/index.css";
 import { ThemeProvider } from "./providers/ThemeProvider";
+import { Provider } from "react-redux";
+import store from "./redux/store";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <ThemeProvider>
-      <App />
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
+    </Provider>
   </React.StrictMode>
 );

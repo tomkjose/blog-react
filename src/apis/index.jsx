@@ -4,13 +4,14 @@ import { API_URL } from "../utils/constants";
 const authToken = JSON.parse(localStorage.getItem("token")) || "";
 
 export const userSignin = async (email, password) => {
-  const response = await axios.get(API_URL.signin(), {
+  const response = await axios.post(API_URL.signin(), {
     email,
     password,
   });
   const data = response.data;
   localStorage.setItem("token", JSON.stringify(data.token));
-  console.log("data", data);
+  // console.log("data", data);
+  return data;
 };
 
 export const userSignup = async (
@@ -19,14 +20,14 @@ export const userSignup = async (
   password,
   confirmPassword
 ) => {
-  const response = await axios.get(API_URL.signup(), {
+  const response = await axios.post(API_URL.signup(), {
     username,
     email,
     password,
     confirmPassword,
   });
   const data = response.data;
-  console.log("data", data);
+  return data;
 };
 
 export const updateUserProfile = async (email, username, avatar) => {

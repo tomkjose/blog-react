@@ -75,6 +75,10 @@
     display: none;
   }
 
+  .nav__auth__item {
+    display: none;
+  }
+
   .compact__menu {
     display: flex;
     width: 100%;
