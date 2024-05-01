@@ -5,7 +5,7 @@
   margin: 0;
   box-sizing: border-box;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 16px;
   font-family: "Poppins", sans-serif;
 }
 
@@ -23,4 +23,22 @@
 .App.light {
   background-color: white;
   color: black;
+}
+
+@media only screen and (max-width: 1200px) {
+  * {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 729px) {
+  * {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  * {
+    font-size: 12px;
+  }
 }

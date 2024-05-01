@@ -1,0 +1,99 @@
+.Navbar {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 0.4rem 0;
+}
+
+.navbar__container {
+  width: 100%;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.nav__brand {
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+
+.nav__icon {
+  font-size: 1.2rem;
+  font-weight: 900;
+  background-color: #2075fe;
+  padding: 0.2rem 0.6rem;
+  margin: 0 0.2rem;
+  color: white;
+}
+
+.nav__auth {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav__auth__item {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.nav__auth__btn {
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 8px;
+  background-color: #2075fe;
+  color: white;
+  padding: 0.4rem;
+  border: none;
+}
+
+.nav__auth__btn:hover {
+  background-color: #3582fc;
+}
+
+.nav__link {
+  color: inherit;
+}
+
+.compact__menu {
+  display: none;
+}
+
+@media only screen and (max-width: 729px) {
+  .Navbar {
+    width: 85%;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .Navbar {
+    width: 90%;
+  }
+
+  .nav__link {
+    display: none;
+  }
+
+  .compact__menu {
+    display: flex;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding: 0.4rem 0;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+
+  .compact__menu__container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .comapct__menu__link {
+    color: inherit;
+  }
+}

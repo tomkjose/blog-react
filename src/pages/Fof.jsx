@@ -1,7 +1,17 @@
 import React from "react";
-
+import "../styles/fof.css";
+import { Link } from "react-router-dom";
 function Fof() {
-  return <div></div>;
+  return (
+    <div className="fof">
+      <div className="fof__title">404</div>
+      <button className="fof__btn">
+        <Link to="/" className="fof__link">
+          Home
+        </Link>
+      </button>
+    </div>
+  );
 }
 
 export default Fof;

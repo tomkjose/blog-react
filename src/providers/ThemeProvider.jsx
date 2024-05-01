@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
 const ThemeContext = createContext();
 
@@ -9,12 +9,15 @@ export const ThemeProvider = ({ children }) => {
   const [currentTheme, setCurrentTheme] = useState(
     storedTheme !== null ? storedTheme : isDarkMode
   );
+
   const changeTheme = () => {
     setCurrentTheme((currentTheme) => !currentTheme);
   };
+
   useEffect(() => {
     localStorage.setItem("themeMode", JSON.stringify(currentTheme));
   }, [currentTheme]);
+
   const theme = {
     currentTheme,
     changeTheme,
