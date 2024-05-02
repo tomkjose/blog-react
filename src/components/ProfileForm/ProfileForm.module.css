@@ -1,0 +1,34 @@
+.profile__form {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.form__group {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form__input {
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid rgb(213, 213, 213);
+}
+
+.update__btn {
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 8px;
+  background-color: #2075fe;
+  color: white;
+  padding: 0.4rem;
+  border: none;
+}
+
+.update__btn:hover {
+  background-color: #3582fc;
+}

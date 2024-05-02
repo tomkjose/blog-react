@@ -44,6 +44,7 @@ function Navbar() {
                 </span>
               )}
             </div>
+
             <Link to="/signin" className={styles.nav__link}>
               <div className={styles.nav__auth__item}>Log In</div>
             </Link>
@@ -72,6 +73,17 @@ function Navbar() {
                 </span>
               )}
             </div>
+            {user.avatar ? (
+              <Link to={`/user/${user.userId}`}>
+                <img
+                  src={new URL(user.avatar, "http://localhost:8080/uploads")}
+                  alt="avatar"
+                  className={styles.nav__avatar}
+                />
+              </Link>
+            ) : (
+              ""
+            )}
             <div className={styles.nav__auth__item} onClick={handleLogout}>
               Log out
             </div>
@@ -99,13 +111,15 @@ function Navbar() {
               </span>
             </Link>
           ) : (
-            <span
-              className="material-symbols-outlined"
-              style={{ cursor: "pointer" }}
-              onClick={handleLogout}
-            >
-              logout
-            </span>
+            <div>
+              <span
+                className="material-symbols-outlined"
+                style={{ cursor: "pointer" }}
+                onClick={handleLogout}
+              >
+                logout
+              </span>
+            </div>
           )}
         </div>
       </div>

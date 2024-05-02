@@ -30,20 +30,14 @@ export const userSignup = async (
   return data;
 };
 
-export const updateUserProfile = async (email, username, avatar) => {
-  const response = await axios.post(
-    API_URL.updateProfile(),
-    {
-      email,
-      username,
-      avatar,
+export const updateUserProfile = async (formData, id) => {
+  console.log("id", formData);
+  const response = await axios.put(API_URL.updateProfile(id), formData, {
+    headers: {
+      Authorization: `${authToken}`,
     },
-    {
-      headers: {
-        Authorization: `Bearer ${authToken}`,
-      },
-    }
-  );
+  });
+  console.log("response", response);
   const data = response.data;
   console.log("data", data);
 };

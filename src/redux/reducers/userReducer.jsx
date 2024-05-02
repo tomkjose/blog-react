@@ -3,6 +3,7 @@ import {
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
   LOGOUT,
+  UPDATE_USER,
 } from "../actions/userAction";
 
 const initialState = {
@@ -39,6 +40,11 @@ const userReducer = (state = initialState, action) => {
         user: null,
         loading: false,
         error: null,
+      };
+    case UPDATE_USER:
+      return {
+        ...state,
+        user: action.payload,
       };
     default:
       return state;

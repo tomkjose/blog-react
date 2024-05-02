@@ -1,0 +1,29 @@
+.profile {
+  width: 100%;
+  height: 100vh;
+}
+
+.profile__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: 1rem auto;
+}
+
+.profile__avatar {
+  width: 10rem;
+  border-radius: 100%;
+  padding: 0.2rem;
+  border: 3px solid #2075fe;
+}
+
+.profile__username {
+  font-weight: 800;
+  font-size: 1.4rem;
+  padding-top: 1rem;
+}
+
+.profile__email {
+  color: lightgray;
+}

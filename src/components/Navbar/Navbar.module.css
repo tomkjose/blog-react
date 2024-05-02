@@ -60,6 +60,13 @@
   display: none;
 }
 
+.nav__avatar {
+  width: 3rem;
+  border-radius: 100%;
+  padding: 0.2rem;
+  border: 3px solid #2075fe;
+}
+
 @media only screen and (max-width: 729px) {
   .Navbar {
     width: 85%;
