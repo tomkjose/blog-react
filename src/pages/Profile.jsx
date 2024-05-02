@@ -1,15 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../styles/profile.css";
 import { useSelector } from "react-redux";
 import ProfileForm from "../components/ProfileForm/ProfileForm";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import LoadingPage from "./LoadingPage";
 
 function Profile() {
   const user = useSelector((state) => state.user.user);
   const { id } = useParams();
 
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!user) {
+      navigate("/");
+    }
+  }, [user, navigate]);
   if (!user) {
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <LoadingPage />
+      </div>
+    );
   }
 
   return (

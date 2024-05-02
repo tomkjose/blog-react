@@ -45,7 +45,8 @@ export const updateUserProfile = async (formData, id) => {
 export const fetchAllPosts = async () => {
   const response = await axios.get(API_URL.allPosts());
   const data = response.data;
-  console.log("data", data);
+  return data;
+  // console.log("data", data);
 };
 
 export const deletePost = async (id) => {
@@ -56,6 +57,7 @@ export const deletePost = async (id) => {
   });
   const data = response.data;
   console.log("data", data);
+  return data;
 };
 
 export const updatePost = async (id) => {
@@ -68,16 +70,14 @@ export const updatePost = async (id) => {
   console.log("data", data);
 };
 
-export const createPost = async (title, body, thumbnail, author) => {
-  const response = await axios.post(
-    API_URL.createPost(),
-    { title, body, thumbnail, author },
-    {
-      headers: {
-        Authorization: `${authToken}`,
-      },
-    }
-  );
+export const createPost = async (formData) => {
+  console.log("authToken", authToken);
+  const response = await axios.post(API_URL.createPost(), formData, {
+    headers: {
+      Authorization: `${authToken}`,
+    },
+  });
   const data = response.data;
   console.log("data", data);
+  return data;
 };

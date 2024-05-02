@@ -1,0 +1,94 @@
+.home {
+  width: 100%;
+  height: 100vh;
+}
+
+.home__container {
+  width: 80%;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.home__intro {
+  display: flex;
+  justify-content: space-between;
+}
+
+.home__user {
+  color: #2075fe;
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.home__message {
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+.home__create__btn {
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 8px;
+  background-color: #2075fe;
+  color: white;
+  padding: 0.4rem;
+  border: none;
+}
+
+.home__create__btn:hover {
+  background-color: #3582fc;
+}
+
+.add__post {
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  color: #666;
+}
+
+@media only screen and (max-width: 729px) {
+  .home__container {
+    width: 85%;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .home__container {
+    width: 90%;
+  }
+
+  .btn__span {
+    display: none;
+  }
+
+  .add__post {
+    display: flex;
+  }
+}

@@ -7,6 +7,7 @@ import { logout } from "../../redux/actions/userAction";
 
 function Navbar() {
   const { currentTheme, changeTheme } = useChangeTheme();
+
   const user = useSelector((state) => state.user.user);
   const dispatch = useDispatch();
   const handleLogout = () => {
@@ -21,7 +22,9 @@ function Navbar() {
     <div className={styles.navbar__container}>
       <div className={styles.Navbar}>
         <div className={styles.nav__brand}>
-          <span className={styles.nav__icon}>B</span>LOG
+          <Link to="/" className={styles.nav__home__link}>
+            <span className={styles.nav__icon}>B</span>LOG
+          </Link>
         </div>
         {!user ? (
           <div className={styles.nav__auth}>
@@ -90,7 +93,10 @@ function Navbar() {
           </div>
         )}
       </div>
-      <div className={styles.compact__menu}>
+      <div
+        className={styles.compact__menu}
+        style={{ backgroundColor: currentTheme ? "#171717" : "white" }}
+      >
         <div className={styles.compact__menu__container}>
           {" "}
           <Link to="/" className={styles.comapct__menu__link}>

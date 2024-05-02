@@ -1,0 +1,75 @@
+.post {
+  width: 100%;
+}
+
+.post__container {
+  width: 80%;
+  margin: 2rem auto;
+}
+
+.post__title {
+  font-size: 2rem;
+}
+
+.post__user__avatar {
+  width: 3.2rem;
+  border-radius: 100%;
+  border: 2px solid #2075fe;
+}
+
+.poste__delete {
+  width: 100%;
+}
+
+.post__delete__btn {
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 8px;
+  background-color: #2075fe;
+  color: white;
+  padding: 0.4rem;
+  border: none;
+}
+
+.post__delete__btn {
+  background-color: #3582fc;
+}
+
+.post__info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  margin: 1rem 0;
+  border-top: 1px solid #2075fe;
+}
+
+.post__info__user {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.post__image {
+  display: flex;
+  justify-content: center;
+  padding: 1.4rem 0;
+}
+
+.post__thumbnail {
+  width: 100%;
+}
+
+.post__description {
+  width: 100%;
+  padding: 1.4rem 0;
+}
+
+.post__user__name {
+  font-weight: 600;
+}
+
+.post__date {
+  color: gray;
+}
