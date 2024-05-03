@@ -35,7 +35,12 @@ function BlogList() {
           <div key={post._id} className={styles.post__card}>
             {post && post.thumbnail ? (
               <img
-                src={new URL(post.thumbnail, "http://localhost:8080/uploads")}
+                src={
+                  new URL(
+                    post.thumbnail,
+                    "https://blog-api-d30h.onrender.com/uploads"
+                  )
+                }
                 alt="post thumbnail"
                 className={styles.post__thumbnail}
               />
@@ -52,7 +57,7 @@ function BlogList() {
                   src={
                     new URL(
                       post.author?.avatar,
-                      "http://localhost:8080/uploads"
+                      "https://blog-api-d30h.onrender.com/uploads"
                     )
                   }
                   alt="post user avatar"

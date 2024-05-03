@@ -44,7 +44,12 @@ function Post() {
           <div className="post__image">
             {post && post.thumbnail ? (
               <img
-                src={new URL(post.thumbnail, "http://localhost:8080/uploads")}
+                src={
+                  new URL(
+                    post.thumbnail,
+                    "https://blog-api-d30h.onrender.com/uploads"
+                  )
+                }
                 alt="thumbnail"
                 className="post__thumbnail"
               />
@@ -69,7 +74,10 @@ function Post() {
               {post && post.author && post.author.avatar ? (
                 <img
                   src={
-                    new URL(post.author.avatar, "http://localhost:8080/uploads")
+                    new URL(
+                      post.author.avatar,
+                      "https://blog-api-d30h.onrender.com/uploads"
+                    )
                   }
                   alt="user__img"
                   className="post__user__avatar"

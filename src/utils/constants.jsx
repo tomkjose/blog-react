@@ -1,4 +1,4 @@
-const API_ROOT = "http://localhost:8080/api/v1";
+const API_ROOT = "https://blog-api-d30h.onrender.com/api/v1";
 
 export const API_URL = {
   signin: () => `${API_ROOT}/user/signin`,

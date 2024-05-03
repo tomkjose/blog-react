@@ -29,7 +29,12 @@ function Profile() {
         <div className="profile__info">
           {user.avatar ? (
             <img
-              src={new URL(user.avatar, "http://localhost:8080/uploads")}
+              src={
+                new URL(
+                  user.avatar,
+                  "https://blog-api-d30h.onrender.com/uploads"
+                )
+              }
               alt="avatar"
               className="profile__avatar"
             />
@@ -46,7 +51,12 @@ function Profile() {
         <div className="profile__info">
           {user.avatar ? (
             <img
-              src={new URL(user.avatar, "http://localhost:8080/uploads")}
+              src={
+                new URL(
+                  user.avatar,
+                  "https://blog-api-d30h.onrender.com/uploads"
+                )
+              }
               alt="avatar"
               className="profile__avatar"
             />
