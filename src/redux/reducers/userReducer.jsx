@@ -42,9 +42,16 @@ const userReducer = (state = initialState, action) => {
         error: null,
       };
     case UPDATE_USER:
+      const updatedUser = {
+        ...state.user,
+        avatar: action.payload.avatar || state.user.avatar,
+        username: action.payload.username || state.user.username,
+        email: action.payload.email || state.user.email,
+      };
+
       return {
         ...state,
-        user: action.payload,
+        user: updatedUser,
       };
     default:
       return state;

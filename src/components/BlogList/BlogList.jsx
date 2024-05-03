@@ -24,29 +24,39 @@ function BlogList() {
     };
     fetchPosts();
   }, [dispatch]);
-
-  console.log("posts", posts);
+  if (posts.length === 0) {
+    return <div className={styles.post__empty}>No Posts </div>;
+  }
+  // console.log("posts", posts);
   return (
     <div className={styles.blog__list}>
       {posts.map((post) => {
         return (
           <div key={post._id} className={styles.post__card}>
-            <img
-              src={new URL(post.thumbnail, "http://localhost:8080/uploads")}
-              alt="post thumbnail"
-              className={styles.post__thumbnail}
-            />
+            {post && post.thumbnail ? (
+              <img
+                src={new URL(post.thumbnail, "http://localhost:8080/uploads")}
+                alt="post thumbnail"
+                className={styles.post__thumbnail}
+              />
+            ) : (
+              <img
+                src="https://messagetech.com/wp-content/themes/ml_mti/images/no-image.jpg"
+                alt="post thumbnail"
+                className={styles.post__thumbnail}
+              />
+            )}
             <div className={styles.post__user__container}>
               <img
                 src={
-                  new URL(post.author.avatar, "http://localhost:8080/uploads")
+                  new URL(post.author?.avatar, "http://localhost:8080/uploads")
                 }
                 alt="post user avatar"
                 className={styles.post__user__avatar}
               />
               <div className={styles.post__user__details}>
                 <div className={styles.post__user__name}>
-                  {post.author.username}
+                  {post.author?.username}
                 </div>
                 <div className={styles.post__date}>
                   {formatDate(post.createdAt)}

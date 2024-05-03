@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import LoadingPage from "./pages/LoadingPage";
 import { useChangeTheme } from "./providers/ThemeProvider";
+import Footer from "./components/Footer/Footer";
 
 const Home = React.lazy(() => import("./pages/Home"));
 const Post = React.lazy(() => import("./pages/Post"));
@@ -27,6 +28,7 @@ function App() {
             <Route path="*" element={<Fof />} />
           </Routes>
         </Suspense>
+        <Footer />
       </Router>
     </div>
   );

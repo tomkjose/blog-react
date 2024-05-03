@@ -14,6 +14,7 @@ function ProfileForm() {
   const [formData, setFormData] = useState({
     username: user.username,
     email: user.email,
+    avatar: user.avatar,
   });
 
   const handleChange = (e) => {
@@ -37,7 +38,13 @@ function ProfileForm() {
     formDataToSend.append("avatar", avatarFile);
 
     try {
-      await updateUserProfile(formDataToSend, currentUserID);
+      const response = await updateUserProfile(formDataToSend, currentUserID);
+      let localUpdatedUser = JSON.parse(localStorage.getItem("user")) || {};
+      localUpdatedUser.email = response.email;
+      localUpdatedUser.username = response.username;
+      localUpdatedUser.avatar = response.avatar;
+      localStorage.setItem("user", JSON.stringify(localUpdatedUser));
+      dispatch(updateUser(response));
     } catch (error) {
       console.error("Error updating profile:", error.message);
     }

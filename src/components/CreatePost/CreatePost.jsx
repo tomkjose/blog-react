@@ -7,10 +7,12 @@ import {
   createPostSuccess,
 } from "../../redux/actions/blogAction";
 import { createPost } from "../../apis";
+import { useNavigate } from "react-router-dom";
 
 function CreatePost() {
   const user = useSelector((state) => state.user.user);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     title: "",
     thumbnail: null,
@@ -27,7 +29,6 @@ function CreatePost() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
     const postData = new FormData();
 
     for (const key in formData) {
@@ -35,9 +36,10 @@ function CreatePost() {
     }
     dispatch(createPostRequest(postData));
     try {
-      console.log("object", postData);
+      // console.log("object", postData);
       const newPost = await createPost(postData);
       dispatch(createPostSuccess(newPost));
+      navigate("/");
     } catch (error) {
       dispatch(createPostFailure(error.message));
     }

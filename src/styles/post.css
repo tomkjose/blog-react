@@ -1,5 +1,6 @@
 .post {
   width: 100%;
+  min-height: 100vh;
 }
 
 .post__container {
@@ -58,7 +59,7 @@
 }
 
 .post__thumbnail {
-  width: 100%;
+  width: 50%;
 }
 
 .post__description {

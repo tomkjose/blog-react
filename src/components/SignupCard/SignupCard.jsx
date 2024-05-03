@@ -12,7 +12,7 @@ function SignupCard() {
     e.preventDefault();
     try {
       const info = await userSignup(username, email, password, confirmPassword);
-      console.log("info", info.message);
+      // console.log("info", info.message);
       navigate("/signin");
     } catch (error) {
       console.log("error", error);

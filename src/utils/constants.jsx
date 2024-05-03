@@ -8,4 +8,5 @@ export const API_URL = {
   createPost: () => `${API_ROOT}/blog/create`,
   deletePost: (id) => `${API_ROOT}/blog/delete/${id}`,
   updatePost: (id) => `${API_ROOT}/blog/update/${id}`,
+  singPost: (id) => `${API_ROOT}/blog/${id}`,
 };

@@ -1,0 +1,11 @@
+.footer {
+  width: 100%;
+  text-align: center;
+  padding: 1.6rem 0;
+}
+
+@media only screen and (max-width: 589px) {
+  .footer {
+    display: none;
+  }
+}
