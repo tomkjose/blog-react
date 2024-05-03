@@ -16,11 +16,15 @@ function Post() {
 
   useEffect(() => {
     const getPost = async () => {
-      const currentPost = await fetchSinglePosts(id);
-      setPost(currentPost);
+      try {
+        const currentPost = await fetchSinglePosts(id);
+        setPost(currentPost);
+      } catch (error) {
+        navigate("/fof");
+      }
     };
     getPost();
-  }, [id]);
+  }, [id, navigate]);
 
   const handlePostDelete = async () => {
     try {
@@ -62,13 +66,21 @@ function Post() {
           )}
           <div className="post__info">
             <div className="post__info__user">
-              <img
-                src={
-                  new URL(post.author.avatar, "http://localhost:8080/uploads")
-                }
-                alt="user__img"
-                className="post__user__avatar"
-              />
+              {post && post.author && post.author.avatar ? (
+                <img
+                  src={
+                    new URL(post.author.avatar, "http://localhost:8080/uploads")
+                  }
+                  alt="user__img"
+                  className="post__user__avatar"
+                />
+              ) : (
+                <img
+                  src="https://i0.wp.com/digitalhealthskills.com/wp-content/uploads/2022/11/3da39-no-user-image-icon-27.png"
+                  alt="user__img"
+                  className="post__user__avatar"
+                />
+              )}
               <span className="post__user__name">{post.author.username}</span>
             </div>
             <div className="post__details">

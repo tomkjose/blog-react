@@ -47,13 +47,24 @@ function BlogList() {
               />
             )}
             <div className={styles.post__user__container}>
-              <img
-                src={
-                  new URL(post.author?.avatar, "http://localhost:8080/uploads")
-                }
-                alt="post user avatar"
-                className={styles.post__user__avatar}
-              />
+              {post && post.author && post.author.avatar ? (
+                <img
+                  src={
+                    new URL(
+                      post.author?.avatar,
+                      "http://localhost:8080/uploads"
+                    )
+                  }
+                  alt="post user avatar"
+                  className={styles.post__user__avatar}
+                />
+              ) : (
+                <img
+                  src="https://i0.wp.com/digitalhealthskills.com/wp-content/uploads/2022/11/3da39-no-user-image-icon-27.png"
+                  alt="post user avatar"
+                  className={styles.post__user__avatar}
+                />
+              )}
               <div className={styles.post__user__details}>
                 <div className={styles.post__user__name}>
                   {post.author?.username}

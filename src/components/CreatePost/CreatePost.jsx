@@ -29,6 +29,7 @@ function CreatePost() {
   };
 
   const handleSubmit = async (e) => {
+    e.preventDefault();
     const postData = new FormData();
 
     for (const key in formData) {
@@ -36,9 +37,9 @@ function CreatePost() {
     }
     dispatch(createPostRequest(postData));
     try {
-      // console.log("object", postData);
       const newPost = await createPost(postData);
       dispatch(createPostSuccess(newPost));
+      window.location.reload();
       navigate("/");
     } catch (error) {
       dispatch(createPostFailure(error.message));

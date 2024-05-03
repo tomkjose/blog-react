@@ -74,3 +74,15 @@
 .post__date {
   color: gray;
 }
+
+@media only screen and (max-width: 729px) {
+  .post__thumbnail {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .post__thumbnail {
+    width: 100%;
+  }
+}
